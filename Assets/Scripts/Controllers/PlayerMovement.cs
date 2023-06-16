@@ -2,17 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMovement : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public float HorizontalMove => Input.GetAxis("Horizontal");
+
+    private void Awake()
     {
-        
+        _rigidbody = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    #region On Inspector
+    [SerializeField] private float _speed;
+    #endregion
+
+    private Rigidbody2D _rigidbody;
 }

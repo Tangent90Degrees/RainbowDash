@@ -5,7 +5,7 @@ using UnityEngine;
 /// <summary>
 /// Base class of all singletons.
 /// </summary>
-public class Singleton<T> : MonoBehaviour where T : Singleton<T>
+public abstract class Singleton<T> : MonoBehaviour where T : Singleton<T>
 {
 
     /// <summary>
